@@ -1,7 +1,5 @@
-{% macro add_table_constraint(table_name,CNST) %}
+{% macro add_table_pk_constraint(table_name,column_name) %}
 
-{% for cst in CNST %}
-{% do run_query("ALTER TABLE " ~ table_name ~ " ADD " ~ cst ) %}
-{% endfor %}
+ALTER TABLE {{ table_name }} ADD PRIMARY KEY (  {{ column_name }} ) 
 
 {% endmacro %}

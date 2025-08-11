@@ -1,3 +1,14 @@
+{{ 
+    config(
+        materialized = 'table',
+        post_hook=[
+            "{{ 
+            add_table_pk_constraint(this, 'ADDRESS_ID') 
+            }}"
+        ]
+        )
+}}
+
 select 
 ADDRESSID as ADDRESS_ID,
 CUSTOMERID as CUSTOMER_ID,

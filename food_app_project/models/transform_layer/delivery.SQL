@@ -1,5 +1,12 @@
 {{ 
-    config(materialized = 'table')
+    config(
+        materialized = 'table',
+        post_hook=[
+            "{{ 
+            add_table_pk_constraint(this, 'DELIVERY_ID') 
+            }}"
+        ]
+        )
 }}
 
 select

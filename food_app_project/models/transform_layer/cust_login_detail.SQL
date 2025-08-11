@@ -1,11 +1,12 @@
 {{ 
-    config(materialized = 'table',
-      post_hook=[
+    config(
+        materialized = 'table',
+        post_hook=[
             "{{ 
-            add_table_constraint('')']) 
+            add_table_pk_constraint(this,'LOGIN_ID') 
             }}"
         ]
-    )
+        )
 }}
 
 select 

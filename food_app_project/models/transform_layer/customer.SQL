@@ -3,7 +3,7 @@
         materialized = 'table',
         post_hook=[
             "{{ 
-            add_table_constraint(this, ['PRIMARY KEY (CUSTOMER_ID)']) 
+            add_table_pk_constraint(this, 'CUSTOMER_ID') 
             }}"
         ]
         )
