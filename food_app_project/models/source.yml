@@ -1,0 +1,27 @@
+version: 2
+
+sources : 
+   - name : STAGE
+     database : food_app_db
+     schema : stage_layer
+     tables : 
+       - name : CUSTOMERS
+         description : has all customer data
+       - name : CUSTOMER_ADDRESS
+         description : has all customer address data
+       - name : DELIVERY
+         description : has all delivery related data
+       - name : DELIVERYAGENT
+         description : has all delivery agent related data
+       - name : LOCATION
+         description : has all location data
+       - name : LOGIN_AUDIT
+         description : has all login data
+       - name : MENU
+         description : has all menu data
+       - name : ORDERS
+         description : has all orders data
+       - name : ORDER_ITEMS
+         description : has all order items data
+       - name : RESTAURANT
+         description : has all restaurant related data

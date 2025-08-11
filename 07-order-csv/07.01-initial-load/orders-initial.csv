@@ -1,0 +1,9 @@
+OrderID,CustomerID,RestaurantID,OrderDate,TotalAmount,Status,PaymentMethod,CreatedDate,ModifiedDate
+1,1,1,24:35.7,187,Delivered,Cash,24:35.7,24:35.7
+2,1,2,24:35.7,1676,Delivered,Cash,24:35.7,24:35.7
+3,1,3,24:35.7,561,Canceled,UPI,24:35.7,24:35.7
+4,2,4,24:35.7,538,Failed,Cash,24:35.7,24:35.7
+5,3,5,24:35.7,272,Returned,UPI,24:35.7,24:35.7
+6,4,5,24:35.7,998,Failed,UPI,24:35.7,24:35.7
+7,4,5,24:35.7,918,Returned,Wallet,24:35.7,24:35.7
+8,5,2,24:35.7,1590,Abandoned,Wallet,24:35.7,24:35.7
