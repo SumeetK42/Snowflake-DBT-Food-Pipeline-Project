@@ -32,7 +32,7 @@ SHOW FILE FORMATS;
 DESC FILE FORMAT csv_ff;
 
 --- Loaded Manually from snowsight UI
-s
+
 ---  we query the inital stage location file
 
 list @initial_stage;
