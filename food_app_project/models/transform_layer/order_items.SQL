@@ -4,6 +4,12 @@
         post_hook=[
             "{{ 
             add_table_pk_constraint(this, 'ORDER_ITEM_ID') 
+            }}",
+            "{{ 
+            add_table_fk_constraint(this, 'ORDER_ID',ref('orders'),'ORDER_ID') 
+            }}",
+            "{{ 
+            add_table_fk_constraint(this, 'MENU_ID',ref('menu'),'MENU_ID') 
             }}"
         ]
         )
