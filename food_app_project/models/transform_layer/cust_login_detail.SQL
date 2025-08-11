@@ -2,7 +2,7 @@
     config(materialized = 'table',
       post_hook=[
             "{{ 
-            add_table_constraint(this, ['PRIMARY KEY (LOGIN_ID)','FOREIGN KEY (CUSTOMER_ID) REFERENCES {{ ref('CUSTOMERS') }}(CUSTOMER_ID)']) 
+            add_table_constraint('')']) 
             }}"
         ]
     )
