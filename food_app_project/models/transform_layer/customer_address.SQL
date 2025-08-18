@@ -37,6 +37,6 @@ ELSE 'OTHERS'
 END AS ADDRESS_TYPE,
  {{ handle_column_date('CREATEDDATE') }} as create_date,
  'admin' as create_user,
- {{ handle_column_date('MODIFIEDDATE') }} as modified_date,
+ {{ handle_column_date('MODIFIEDDATE') }} as change_date,
  'admin' as change_user
 from {{ source('STAGE','CUSTOMER_ADDRESS') }}
