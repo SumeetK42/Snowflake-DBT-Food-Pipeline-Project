@@ -2,6 +2,10 @@
     config(materialized = 'table')
 }}
 
+with customer_address_snap as (
+    select * from {{ ref('customer_address_snapshot') }}
+)
+
 select 
 {{ add_surrograte_key (ADDRESS_ID,CUSTOMER_ID,HOUSE_NO) }} as ADDRESS_SK,
 ADDRESS_ID,
@@ -19,4 +23,4 @@ LATITUDE,
 LONGITUDE,
 PRIMARY_FLAG,
 ADDRESS_TYPE
-from {{ ref('customer_address') }}
+from customer_address_snap

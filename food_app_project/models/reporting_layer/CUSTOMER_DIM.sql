@@ -2,6 +2,10 @@
     config(materialized = 'table')
 }}
 
+with customer_snap as (
+    select * from {{ ref('customer_snapshot') }}
+)
+
 select
 {{ add_surrograte_key(CUSTOMER_ID,CUSTOMER_NAME,EMAIL_ADDRESS) }} as CUSTOMER_SK,
 CUSTOMER_ID,
@@ -14,7 +18,7 @@ DATE_OF_BIRTH,
 ANNIVERSARY_DATE
 CUISINETYPES_PREF
 FOODTYPE_PREF
-from {{ ref('customer') }}
+from customer_snap
 
 
 

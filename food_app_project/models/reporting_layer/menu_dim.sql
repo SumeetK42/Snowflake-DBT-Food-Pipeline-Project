@@ -2,6 +2,9 @@
     config(materialized = 'table')
 }}
 
+with menu_snap as (
+  select * from {{ ref('menu_snapshot') }}
+)
 select 
 {{ add_surrograte_key(MENU_ID,RESTAURANT_ID,MENU_ITEM_NAME) }} as MENU_SK,
 MENU_ID,
@@ -10,11 +13,8 @@ MENU_ITEM_NAME,
 DESCRIPTION,
 PRICE,
 CATEGORY,
-IS_AVAILABLE_NOW,
-EFFECTIVE_START_DATE,
-EFFECTIVE_END_DATE,
-IS_CURRENT
-from {{ ref('menu') }}
+IS_AVAILABLE_NOW
+from menu_snap
 
 /*
 
