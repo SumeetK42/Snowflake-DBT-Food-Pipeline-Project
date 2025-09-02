@@ -10,7 +10,7 @@
 }}
 
 select
-to_number(CUSTOMERID) as CUSTOMER_ID,
+"CUSTOMERID" as CUSTOMER_ID,
 {{ handle_name('"Name"') }} as CUSTOMER_NAME,
 {{ handle_phone_number('"Mobile"') }} AS PHONE_NUMBER, 
 {{ handle_email('"Email"')}} as EMAIL_ADDRESS,
