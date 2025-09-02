@@ -2,14 +2,13 @@
 
 {{
     config(
-        target_schema='snapshot_layer'
-        unique_key='CUSTOMER_ID'
-        statergy='timestamp'
-        updated_by='change_date'
+        unique_key='CUSTOMER_ID',
+        strategy='timestamp',
+        updated_at='CHANGE_DATE',
         invalidate_hard_deletes=True
     )
 }}
 
-select * from {{ ref('customer')}}
+select * from {{ ref('customer') }}
 
 {% endsnapshot %}
