@@ -35,8 +35,8 @@ WHEN upper(TRIM(ADDRESSTYPE)) = 'WORK' THEN 'WORK'
 WHEN upper(TRIM(ADDRESSTYPE)) = 'HOME' THEN 'HOME'
 ELSE 'OTHERS'
 END AS ADDRESS_TYPE,
- {{ handle_column_date('CREATEDDATE') }} as create_date,
+ cast ( {{ handle_column_date('CREATEDDATE') }} as timestamp_ntz) as create_date,
  'admin' as create_user,
- {{ handle_column_date('MODIFIEDDATE') }} as change_date,
+ cast ( {{ handle_column_date('MODIFIEDDATE') }} as timestamp_ntz) as change_date,
  'admin' as change_user
 from {{ source('STAGE','CUSTOMER_ADDRESS') }}

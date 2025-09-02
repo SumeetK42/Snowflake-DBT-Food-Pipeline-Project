@@ -33,8 +33,8 @@ end as RESTAURANT_STATUS,
 {{ handle_null_val('RESTAURANT_ADDRESS') }} as  RESTAURANT_ADDRESS,
 nvl(LATITUDE,0) as LATITUDE,
 nvl(LONGITUDE,0) as LONGITUDE,
-{{ handle_column_date('CREATEDDATE') }} AS CREATE_DATE,
+cast ( {{ handle_column_date('CREATEDDATE') }} as timestamp_ntz) AS CREATE_DATE,
 'admin' as create_user,
-{{ handle_column_date('MODIFIEDDATE') }} as CHANGE_DATE,
+cast ( {{ handle_column_date('MODIFIEDDATE') }} as timestamp_ntz) as CHANGE_DATE,
 'admin' as change_user
 from {{ source('STAGE','RESTAURANT') }}

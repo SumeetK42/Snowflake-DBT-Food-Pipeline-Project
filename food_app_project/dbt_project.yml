@@ -38,3 +38,6 @@ models:
     reporting_layer:
       +schema : REPORTING_LAYER      
       +materialized: table
+
+snapshots:
+  +schema: snapshot_layer     

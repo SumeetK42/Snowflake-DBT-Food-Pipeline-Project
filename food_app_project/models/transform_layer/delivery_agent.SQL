@@ -21,8 +21,8 @@ CASE
 END AGENT_STATUS,
 {{ handle_gender('GENDER') }} as GENDER,
 RATING,
-CREATEDDATE as create_date,
+cast ( CREATEDDATE as timestamp_ntz)  as create_date,
 'admin' as create_user,
-MODIFIEDDATE as change_date,
+cast ( MODIFIEDDATE as timestamp_ntz)  as change_date,
 'admin' as change_user
 from {{ source('STAGE','DELIVERYAGENT') }}

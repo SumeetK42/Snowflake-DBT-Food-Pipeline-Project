@@ -23,8 +23,8 @@ RESTAURANTID AS RESTAURANT_ID,
 TO_NUMBER(TOTALAMOUNT) AS TOTAL_AMOUNT,
 UPPER({{ handle_null_val('STATUS') }}) as  ORDER_STATUS,
 UPPER({{ handle_null_val('PAYMENTMETHOD') }}) AS PAYMENT_METHOD,
-{{ handle_column_date('CREATEDDATE') }} AS CREATE_DATE,
+cast ( {{ handle_column_date('CREATEDDATE') }} as timestamp_ntz) AS CREATE_DATE,
 'admin' as create_user,
-{{ handle_column_date('MODIFIEDDATE') }} AS CHANGE_DATE,
+cast ( {{ handle_column_date('MODIFIEDDATE') }} as timestamp_ntz) AS CHANGE_DATE,
 'admin' as change_user
 from {{ source('STAGE','ORDERS') }}

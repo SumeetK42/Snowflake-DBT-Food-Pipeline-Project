@@ -23,8 +23,8 @@ case
 when upper(trim(AVAILABILITY)) = 'TRUE' then TRUE
 ELSE FALSE
 end as is_available_now,
- {{ handle_column_date('CREATEDDATE') }} as CREATE_DATE,
+ cast  ( {{ handle_column_date('CREATEDDATE') }} as timestamp_ntz ) as CREATE_DATE,
  'admin' as create_user,
- {{ handle_column_date('MODIFIEDDATE') }} as CHANGE_DATE,
+ cast ( {{ handle_column_date('MODIFIEDDATE') }} as timestamp_ntz) as CHANGE_DATE,
  'admin' as change_user
 from {{ source('STAGE','MENU') }}

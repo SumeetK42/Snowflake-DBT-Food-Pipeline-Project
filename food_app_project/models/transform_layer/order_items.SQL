@@ -25,8 +25,8 @@ case
   when to_number(SUBTOTAL) <>  to_number(QUANTITY) * to_number(PRICE) then to_number(QUANTITY) * to_number(PRICE)
   else to_number(SUBTOTAL)
 end as SUBTOTAL ,
-CREATEDDATE as CREATE_DATE,
+cast ( CREATEDDATE as timestamp_ntz) as CREATE_DATE,
 'admin' as create_user,
-MODIFIEDDATE AS CHANGE_DATE,
+cast ( MODIFIEDDATE as timestamp_ntz) AS CHANGE_DATE,
 'admin' as change_user
 from {{ source('STAGE','ORDER_ITEMS') }}
