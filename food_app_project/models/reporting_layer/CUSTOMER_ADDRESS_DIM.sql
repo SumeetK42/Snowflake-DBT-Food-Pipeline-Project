@@ -1,13 +1,6 @@
-{{ 
-    config(materialized = 'table')
-}}
-
-with customer_address_snap as (
-    select * from {{ ref('customer_address_snapshot') }}
-)
 
 select 
-{{ add_surrograte_key (ADDRESS_ID,CUSTOMER_ID,HOUSE_NO) }} as ADDRESS_SK,
+{{ add_surrograte_key ("ADDRESS_ID","CUSTOMER_ID","HOUSE_NO") }} as ADDRESS_SK,
 ADDRESS_ID,
 CUSTOMER_ID,
 FLAT_NO,
@@ -22,5 +15,9 @@ PINCODE,
 LATITUDE,
 LONGITUDE,
 PRIMARY_FLAG,
-ADDRESS_TYPE
-from customer_address_snap
+ADDRESS_TYPE,
+DBT_VALID_FROM AS EFF_START_DATE,
+DBT_VALID_TO AS EFF_END_DATE,
+{{ handle_is_current("DBT_VALID_TO") }} AS IS_CURRENT
+from {{ ref('customer_address_snapshot') }}
+

@@ -1,26 +1,19 @@
-{{ 
-    config(materialized = 'table')
-}}
-
-with customer_snap as (
-    select * from {{ ref('customer_snapshot') }}
-)
-
 select
-{{ add_surrograte_key(CUSTOMER_ID,CUSTOMER_NAME,EMAIL_ADDRESS) }} as CUSTOMER_SK,
-CUSTOMER_ID,
-CUSTOMER_NAME,
-PHONE_NUMBER,
-EMAIL_ADDRESS,
-LOGIN_BY_USING,
-GENDER,
-DATE_OF_BIRTH,
-ANNIVERSARY_DATE
-CUISINETYPES_PREF
-FOODTYPE_PREF
-from customer_snap
-
-
+{{ add_surrograte_key("CUSTOMER_ID","CUSTOMER_NAME","EMAIL_ADDRESS") }} as CUSTOMER_SK,
+CUST.CUSTOMER_ID,
+CUST.CUSTOMER_NAME,
+CUST.PHONE_NUMBER,
+CUST.EMAIL_ADDRESS,
+CUST.LOGIN_BY_USING,
+CUST.GENDER,
+CUST.DATE_OF_BIRTH,
+CUST.ANNIVERSARY_DATE,
+CUST.CUISINETYPES_PREF,
+CUST.FOODTYPE_PREF,
+CUST.DBT_VALID_FROM as EFF_START_DATE,
+CUST.DBT_VALID_TO AS EFF_END_DATE,
+{{ handle_is_current("DBT_VALID_TO") }} as IS_CURRENT
+from {{ ref('customer_snapshot') }} CUST
 
 /*
 
