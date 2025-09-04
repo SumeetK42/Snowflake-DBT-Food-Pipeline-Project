@@ -15,7 +15,7 @@ T.$8 AS ModifiedDate,
 METADATA$FILENAME,
 METADATA$FILE_CONTENT_KEY,
 METADATA$FILE_LAST_MODIFIED
-FROM @initial_stage/order_items/order-item-initial-v2.csv
+FROM @initial_stage/order_items/order-Item-initial.csv
 (FILE_FORMAT => 'CSV_FF') T ;
 
 CREATE TABLE ORDER_ITEMS (
@@ -45,7 +45,7 @@ T.$8 AS ModifiedDate,
 METADATA$FILENAME,
 METADATA$FILE_CONTENT_KEY,
 METADATA$FILE_LAST_MODIFIED
-FROM @initial_stage/order_items/order-item-initial-v2.csv
+FROM @initial_stage/order_items/order-Item-initial.csv
 (FILE_FORMAT => 'CSV_FF') T 
 )
 FILE_FORMAT = (FORMAT_NAME = 'CSV_FF')
