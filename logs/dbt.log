@@ -1,0 +1,45 @@
+[0m22:54:06.765752 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:54:06.848364 | 5dd25f04-c205-4f85-9686-cd7849663605 ==============================
+[0m22:54:06.848364 [info ] [MainThread]: Running with dbt=1.10.4
+[0m22:54:06.849402 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init food_app_project', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:54:06.913661 [debug] [MainThread]: Starter project path: C:\Users\Admin\anaconda3\envs\dbt-env\Lib\site-packages\dbt\include\starter_project
+[0m22:54:06.968096 [info ] [MainThread]: 
+Your new dbt project "food_app_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:54:06.969033 [info ] [MainThread]: Setting up your profile.
+[0m22:55:53.550937 [info ] [MainThread]: Profile food_app_project written to C:\Users\Admin\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:55:53.558156 [debug] [MainThread]: Command `dbt init` succeeded at 22:55:53.552573 after 106.88 seconds
+[0m22:55:53.558842 [debug] [MainThread]: Flushing usage events
+[0m22:59:11.091727 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:59:11.174404 | 9e9ad510-895c-42ec-aad0-e019124023d3 ==============================
+[0m22:59:11.174404 [info ] [MainThread]: Running with dbt=1.10.4
+[0m22:59:11.175462 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:59:11.219307 [info ] [MainThread]: dbt version: 1.10.4
+[0m22:59:11.220061 [info ] [MainThread]: python version: 3.13.5
+[0m22:59:11.222078 [info ] [MainThread]: python path: C:\Users\Admin\anaconda3\envs\dbt-env\python.exe
+[0m22:59:11.223335 [info ] [MainThread]: os info: Windows-11-10.0.22000-SP0
+[0m22:59:11.808321 [info ] [MainThread]: Using profiles dir at C:\Users\Admin\.dbt
+[0m22:59:11.808978 [info ] [MainThread]: Using profiles.yml file at C:\Users\Admin\.dbt\profiles.yml
+[0m22:59:11.810126 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Admin\Desktop\Food_Delivery_DE_Project\dbt_project.yml
+[0m22:59:11.812491 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m22:59:11.814316 [debug] [MainThread]: Command `dbt debug` failed at 22:59:11.814082 after 0.80 seconds
+[0m22:59:11.815629 [debug] [MainThread]: Flushing usage events

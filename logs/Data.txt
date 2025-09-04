@@ -1,0 +1,43 @@
+
+
+CUSTOMERS
+CUSTOMER_ADDRESS
+DELIVERY
+DELIVERYAGENT
+LOCATION
+LOGIN_AUDIT
+MENU
+ORDERS
+ORDER_ITEMS
+RESTAURANT
+
+---
+restaurant_location ( restaurant_location_stm )
+restaurant ( restaurant_stm )
+menu (menu_stm )
+customer (customer_stm )
+customer_address (CUSTOMER_ADDRESS_stm)
+orders (ORDERS_stm )
+order_item (order_item_stm )
+delivery_agent (delivery_agent_stm )
+delivery (delivery_stm )
+
+---------------------------
+restaurant_location_dim 
+RESTAURANT_DIM 
+CUSTOMER_DIM 
+CUSTOMER_ADDRESS_DIM 
+menu_dim 
+delivery_agent_dim 
+DATE_DIM 
+
+--- facts
+order_item_fact 
+
+---- View KPIs
+
+vw_yearly_revenue_kpis 
+vw_monthly_revenue_kpis 
+vw_daily_revenue_kpis 
+vw_day_revenue_kpis 
+vw_monthly_revenue_by_restaurant 

@@ -1,0 +1,14 @@
+
+select 
+{{ add_surrograte_key("MENU_ID","RESTAURANT_ID","MENU_ITEM_NAME") }} as MENU_SK,
+MENU_ID,
+RESTAURANT_ID,
+MENU_ITEM_NAME,
+DESCRIPTION,
+PRICE,
+CATEGORY,
+IS_AVAILABLE_NOW,
+DBT_VALID_FROM AS EFF_START_DATE,
+DBT_VALID_TO AS EFF_END_DATE,
+{{ handle_is_current("DBT_VALID_TO") }} AS IS_CURRENT
+from {{ ref('menu_snapshot') }}
