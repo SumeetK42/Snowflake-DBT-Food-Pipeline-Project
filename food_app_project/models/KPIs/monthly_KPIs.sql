@@ -1,0 +1,13 @@
+
+select
+MONTH,MONTH_NAME,YEAR ,
+count(order_id) as TOTAL_ORDERS,
+sum(quantity) as TOTAL_QUANTITY,
+sum(subtotal) as MONTHLY_REVENUE,
+ROUND(SUM(SUBTOTAL)/COUNT(ORDER_ID),0) AS "AVG_ORDER_VALUE",
+ROUND( COUNT(ORDER_ID)/COUNT(DISTINCT CUSTOMER_DIM_KEY),0) AS "AVG_ORDERS_PER_CUST",
+ROUND( SUM(SUBTOTAL) / COUNT(DISTINCT RESTAURANT_DIM_KEY),0) AS "REVENUE_PER_RESTAURANT"
+from {{ ref('order_item_fact') }}
+join {{ ref('date_dim') }} on date_id = DATE_DIM_KEY
+group by MONTH,MONTH_NAME,YEAR
+order by Year,month
