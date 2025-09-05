@@ -1,0 +1,10 @@
+select year,
+count(order_id) as TOTAL_ORDERS,
+sum(subtotal) as YEARLY_REVENUE,
+ROUND(SUM(SUBTOTAL)/COUNT(CUSTOMER_DIM_KEY),0) AS "REVENUE_PER_CUST",
+ROUND( COUNT(ORDER_ID)/COUNT(DISTINCT CUSTOMER_DIM_KEY),0) AS "AVG_ORDERS_PER_CUST",
+ROUND( SUM(SUBTOTAL) / COUNT(DISTINCT RESTAURANT_DIM_KEY),0) AS "REVENUE_PER_RESTAURANT"
+from {{ ref('order_item_fact') }}
+join {{ ref('date_dim') }} on  date_id = DATE_DIM_KEY
+group by YEAR
+order  by year

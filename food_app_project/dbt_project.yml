@@ -38,6 +38,9 @@ models:
     reporting_layer:
       +schema : REPORTING_LAYER      
       +materialized: table
-
+    KPIs:
+      +schema : REPORTING_LAYER      
+      +materialized: view
+      
 snapshots:
   +schema: snapshot_layer     
