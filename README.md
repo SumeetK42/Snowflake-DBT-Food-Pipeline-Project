@@ -38,13 +38,13 @@ It ingests raw CSVs, stages them in Snowflake, applies transformations with **db
 
 ## 🗄️ Data Pipeline Layers  
 
-<img src="Project Docs/Entity_flow_daigram.png" alt="Entity_flow_daigram" width="700"/>
+<img src="Project Docs/Entity_flow_daigram.png" alt="Entity_flow_daigram" width="1000"/>
 
 ## 📊 Data Model  
 
 ### Entity-Relationship (Star Schema)  
 
-<img src="Project Docs/STAR_SCHEMA" alt="STAR_SCHEMA" width="600"/>  
+<img src="Project Docs\STAR_SCHEMA.png" alt="STAR_SCHEMA" width="800"/>  
 
 ### dbt Lineage Graph  
 
@@ -58,9 +58,6 @@ It ingests raw CSVs, stages them in Snowflake, applies transformations with **db
 - **Monthly Order KPIs (Revenue per Restaurant, Avg Order Value)**  
 - **Yearly KPIs (Revenue, Revenue per Customer, Revenue per Restaurant)**  
 <img src="Project Docs/KPIs dashboard.png" alt="KPIs" width="700"/>
----
-
-
 
 ---
 ## 👨‍💻 Author  
