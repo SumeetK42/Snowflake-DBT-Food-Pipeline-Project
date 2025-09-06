@@ -33,22 +33,22 @@ It ingests raw CSVs, stages them in Snowflake, applies transformations with **db
 6. **Dashboards** → Snowflake Snowsight  
 
 
-<img src="Project Docs/high level architecture.png" alt="Diagram" width="400"/>
+<img src="Project Docs/high level architecture.png" alt="high level architecture" width="700"/>
 
 
 ## 🗄️ Data Pipeline Layers  
 
-<img src="Project Docs/high level architecture.png" alt="Diagram" width="400"/>
+<img src="Project Docs/Entity_flow_daigram.png" alt="Entity_flow_daigram" width="700"/>
 
 ## 📊 Data Model  
 
 ### Entity-Relationship (Star Schema)  
 
-<img src="Project Docs/high level architecture.png" alt="Diagram" width="400"/>  
+<img src="Project Docs/STAR_SCHEMA" alt="STAR_SCHEMA" width="600"/>  
 
 ### dbt Lineage Graph  
 
-<img src="Project Docs/high level architecture.png" alt="Diagram" width="400"/>
+<img src="Project Docs/Pipeline_Lineage.png" alt="Pipeline_Lineage" width="1000"/>
 ---
 
 ## 📈 Dashboard  
@@ -57,7 +57,7 @@ It ingests raw CSVs, stages them in Snowflake, applies transformations with **db
 - **Monthly Revenue**  
 - **Monthly Order KPIs (Revenue per Restaurant, Avg Order Value)**  
 - **Yearly KPIs (Revenue, Revenue per Customer, Revenue per Restaurant)**  
-<img src="Project Docs/high level architecture.png" alt="Diagram" width="400"/>
+<img src="Project Docs/KPIs dashboard.png" alt="KPIs" width="700"/>
 ---
 
 
