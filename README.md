@@ -1,4 +1,4 @@
-# 🍴 Food Delivery Analytics Pipeline  
+# 🍴 Food Delivery Data Engineering Pipeline  
 
 ## 📌 Project Overview  
 This project demonstrates an **end-to-end Data Engineering pipeline** built with **Snowflake** and **dbt**.  
