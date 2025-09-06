@@ -1,0 +1,106 @@
+
+
+# 📂 Snowflake DBT Data Pipeline Documentation
+
+This document provides a structured overview of the **data pipeline layers**: Stage, Transform, Snapshot, and Reporting. Each section outlines the schema, tables, streams, and views.
+
+
+## 1. Stage Files
+
+**Schema Name:** `STAGE_LAYER`
+
+Raw data files ingested into Snowflake Staging Area:
+
+| Folder Path                       | File Name                            |
+| --------------------------------- | ------------------------------------ |
+| initial_stage/customer_address/ | customer_address_book_initial.csv |
+| initial_stage/customers/         | customers-initial.csv                |
+| initial_stage/delivery/          | delivery-initial-load.csv            |
+| initial_stage/delivery_agent/   | delivery-agent-initial.csv           |
+| initial_stage/location/          | location-5rows.csv                   |
+| initial_stage/login/             | login-audit-initial.csv              |
+| initial_stage/menu/              | menu-initial-load.csv                |
+| initial_stage/order/             | orders-initial.csv                   |
+| initial_stage/order_items/      | order-Item-initial.csv               |
+| initial_stage/order_items/      | order-item-initial-v2.csv            |
+| initial_stage/restaurants/       | restaurant-delhi+NCR.csv             |
+
+---
+
+## 2. Stage Layer – Tables & Streams
+
+**Schema Name:** `STAGE_LAYER`
+
+| Table             | Stream                    |
+| ----------------- | ------------------------- |
+| CUSTOMERS         | CUSTOMER_STREAM          |
+| CUSTOMER_ADDRESS | CUSTOMER_ADDRESS_STREAM |
+| DELIVERY          | DELIVERY_STRM            |
+| DELIVERYAGENT     | DELIVERY_AGENT_STREAM   |
+| LOCATION          | LOCATION_STREAM          |
+| LOGIN_AUDIT      | LOGIN_STREAM             |
+| MENU              | MENU_STRM                |
+| ORDERS            | ORDER_STREAM             |
+| ORDER_ITEMS      | ORDER_ITEM_STREAM       |
+| RESTAURANT        | RESTAURANT_STRM          |
+
+---
+
+## 3. Transform Layer – Tables
+
+**Schema Name:** `TRANSFORM_LAYER`
+
+| Table                |
+| -------------------- |
+| CUSTOMER             |
+| CUSTOMER_ADDRESS    |
+| CUST_LOGIN_DETAIL  |
+| DELIVERY             |
+| DELIVERY_AGENT      |
+| MENU                 |
+| ORDERS               |
+| ORDER_ITEMS         |
+| RESTAURANT           |
+| RESTAURANT_LOCATION |
+
+---
+
+## 4. Snapshot Layer – Slowly Changing Dimensions (SCD2)
+
+**Schema Name:** `SNAPSHOT_LAYER`
+
+| Snapshot Table                 |
+| ------------------------------ |
+| CUSTOMER_ADDRESS_SNAPSHOT    |
+| CUSTOMER_SNAPSHOT             |
+| DELIVERY_AGENT_SNAPSHOT      |
+| MENU_SNAPSHOT                 |
+| RESTAURANT_LOCATION_SNAPSHOT |
+| RESTAURANT_SNAPSHOT           |
+
+---
+
+## 5. Reporting Layer – Tables & Views
+
+**Schema Name:** `REPORTING_LAYER`
+
+### 📊 Tables
+
+| Table                     |
+| ------------------------- |
+| CUSTOMER_ADDRESS_DIM    |
+| CUSTOMER_DIM             |
+| DATE_DIM                 |
+| DELIVERY_AGENT_DIM      |
+| MENU_DIM                 |
+| ORDER_ITEM_FACT         |
+| RESTAURANT_DIM           |
+| RESTAURANT_LOCATION_DIM |
+
+### 📈 Views (KPI Layer)
+
+| View          |
+| ------------- |
+| MONTHLY_KPIS |
+| YEARLY_KPIS  |
+

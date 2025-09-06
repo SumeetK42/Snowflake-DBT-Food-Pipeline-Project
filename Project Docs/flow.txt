@@ -1,0 +1,75 @@
+initial_stage/customers/customers-initial.csv
+        │
+        ▼
+STAGE_LAYER.CUSTOMERS ──► TRANSFORM_LAYER.CUSTOMER 
+                            ──► SNAPSHOT_LAYER.CUSTOMER_SNAPSHOT 
+                            ──► REPORTING_LAYER.CUSTOMER_DIM 
+
+
+initial_stage/customer_address/customer_address_book_initial.csv
+        │
+        ▼
+STAGE_LAYER.CUSTOMER_ADDRESS ──► TRANSFORM_LAYER.CUSTOMER_ADDRESS 
+                                   ──► SNAPSHOT_LAYER.CUSTOMER_ADDRESS_SNAPSHOT 
+                                   ──► REPORTING_LAYER.CUSTOMER_ADDRESS_DIM 
+
+
+initial_stage/delivery/delivery-initial-load.csv
+        │
+        ▼
+STAGE_LAYER.DELIVERY ──► TRANSFORM_LAYER.DELIVERY 
+                          ──► REPORTING_LAYER.ORDER_ITEM_FACT (Aggregated) 
+
+
+initial_stage/delivery_agent/delivery-agent-initial.csv
+        │
+        ▼
+STAGE_LAYER.DELIVERYAGENT ──► TRANSFORM_LAYER.DELIVERY_AGENT 
+                               ──► SNAPSHOT_LAYER.DELIVERY_AGENT_SNAPSHOT 
+                               ──► REPORTING_LAYER.DELIVERY_AGENT_DIM 
+
+
+initial_stage/location/location-5rows.csv
+        │
+        ▼
+STAGE_LAYER.LOCATION ──► TRANSFORM_LAYER.RESTAURANT_LOCATION 
+                          ──► SNAPSHOT_LAYER.RESTAURANT_LOCATION_SNAPSHOT 
+                          ──► REPORTING_LAYER.RESTAURANT_LOCATION_DIM 
+
+
+initial_stage/login/login-audit-initial.csv
+        │
+        ▼
+STAGE_LAYER.LOGIN_AUDIT ──► TRANSFORM_LAYER.CUST_LOGIN_DETAIL 
+                             ──► REPORTING_LAYER.CUSTOMER_DIM (Aggregated) 
+
+
+initial_stage/menu/menu-initial-load.csv
+        │
+        ▼
+STAGE_LAYER.MENU ──► TRANSFORM_LAYER.MENU 
+                      ──► SNAPSHOT_LAYER.MENU_SNAPSHOT 
+                      ──► REPORTING_LAYER.MENU_DIM 
+
+
+initial_stage/order/orders-initial.csv
+        │
+        ▼
+STAGE_LAYER.ORDERS ──► TRANSFORM_LAYER.ORDERS 
+                        ──► REPORTING_LAYER.ORDER_ITEM_FACT 
+
+
+initial_stage/order_items/order-Item-initial.csv  
+initial_stage/order_items/order-item-initial-v2.csv
+        │
+        ▼
+STAGE_LAYER.ORDER_ITEMS ──► TRANSFORM_LAYER.ORDER_ITEM 
+                             ──► REPORTING_LAYER.ORDER_ITEM_FACT 
+
+
+initial_stage/restaurants/restaurant-delhi+NCR.csv
+        │
+        ▼
+STAGE_LAYER.RESTAURANT ──► TRANSFORM_LAYER.RESTAURANT 
+                            ──► SNAPSHOT_LAYER.RESTAURANT_SNAPSHOT 
+                            ──► REPORTING_LAYER.RESTAURANT_DIM 
